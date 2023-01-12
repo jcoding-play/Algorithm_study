@@ -19,12 +19,12 @@ public class Main {
 		System.out.println(binary_search(k, n, arr));
 	}
 
-	private static int binary_search(int k, int n, int[] arr) {
-		int answer = 0;
-		int lt = 1;
-		int rt = Arrays.stream(arr).max().getAsInt();
+	private static long binary_search(int k, int n, int[] arr) {
+		long answer = 0;
+		long lt = 1;
+		long rt = Arrays.stream(arr).max().getAsInt();
 		while(lt<=rt) {
-			int mid = (lt+rt)/2;
+			long mid = (lt+rt)/2;
 			if(count(arr, mid)>=n) {
 				answer = mid;
 				lt = mid+1;
@@ -35,8 +35,8 @@ public class Main {
 		return answer;
 	}
 
-	private static int count(int[] arr, int length) {
-		int count=0;
+	private static long count(int[] arr, long length) {
+		long count=0;
 		for(int x : arr) {
 			count += x/length;
 		}
